@@ -1,3 +1,4 @@
+
 /* 1. DYNAMIC CYBER PARTICLES BACKGROUND ENGINE */
 const canvas = document.getElementById('particleCanvas');
 const ctx = canvas.getContext('2d');
@@ -195,4 +196,5 @@ navLinksMobile.forEach(link => {
         menuIcon.classList.remove('fa-times');
         menuIcon.classList.add('fa-bars');
     });
+
 });
