@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veloct | Next-Gen Software Engineering Agency</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div id="id_preloader">
+        <div class="loader-text">
+            <span style="--i:1;">V</span>
+            <span style="--i:2;">e</span>
+            <span style="--i:3;">l</span>
+            <span style="--i:4;">o</span>
+            <span style="--i:5;">c</span>
+            <span style="--i:6;">t</span>
+        </div>
+    </div>
+
+    <canvas id="particleCanvas"></canvas>
+
+    <header>
+        <div class="container nav-container">
+            <div class="logo">V<span>eloct</span></div>
+            <nav id="navbar">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Deployments</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+   <!-- UPDATED TWO-COLUMN HERO SECTION -->
+    <section id="home" class="hero-section">
+        <div class="container hero-grid">
+            
+            <!-- Left Column: Text Content -->
+            <div class="hero-content-left">
+                <h1>Architecting Modern<br><span>Digital Ecosystems</span></h1>
+                <p>We engineering premium responsive web setups, secure business POS platforms, and cloud-native SaaS applications. Built to scale.</p>
+                <div class="cta-group">
+                    <a href="#contact" class="btn btn-yellow">Initiate Deployment</a>
+                </div>
+            </div>
+
+           <div class="hero-visual-right">
+ <!-- Right Column: Future-Tech Asymmetric Core -->
+            <div class="hero-visual-right">
+                <div class="tech-orb-workspace">
+                    
+                    <!-- Background Cyber Grid Nodes (සජීවී පසුබිම් රින්ග් එක) -->
+                    <div class="cyber-pulse-ring"></div>
+                    
+                    <!-- Left Node -->
+                    <div class="cyber-node node-left">
+                        <div class="node-hex-wrapper">
+                            <img src="images/ashani.png" alt="Developer">
+                        </div>
+                        <span class="node-badge">DEV</span>
+                    </div>
+                    
+                    <!-- Center Master Node (ප්‍රධාන ලීඩ් එක උඩින් සහ ලොකුවට) -->
+                    <div class="cyber-node node-center">
+                        <div class="node-hex-wrapper core-glow">
+                            <img src="images/aiya.png" alt="Lead Engineer">
+                        </div>
+                        <span class="node-badge core-badge">LEAD</span>
+                    </div>
+                    
+                    <!-- Right Node -->
+                    <div class="cyber-node node-right">
+                        <div class="node-hex-wrapper">
+                            <img src="images/imesha.png" alt="Fullstack">
+                        </div>
+                        <span class="node-badge">DEV</span>
+                    </div>
+
+                </div>
+                
+                <!-- Floating Dashboard Label -->
+                <div class="core-tech-label">
+                    <span class="status-dot"></span> VELOCT ENGINE CORE // LIVE_
+                </div>
+            </div>
+            
+
+        </div>
+    </section>
+
+    <section id="services" class="section-padding reveal">
+        <div class="container">
+            <h2 class="section-title">Comprehensive <span>Solutions</span></h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="icon-box">🌐</div>
+                    <h3>Web Architecture</h3>
+                    <p>Blazing fast corporate profiles, enterprise web portals, complete domain mapping, and optimized cloud hosting deployment frameworks.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon-box">🛒</div>
+                    <h3>E-Commerce Networks</h3>
+                    <p>High-conversion storefront setups with integrated digital product management, secure payment gateways, and analytic dashboards.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon-box">📊</div>
+                    <h3>Enterprise POS</h3>
+                    <p>Advanced Point-of-Sale structures supporting automated inventory tracking, multi-terminal logging, and stable offline/online sync protocols.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon-box">☁️</div>
+                    <h3>SaaS & Mobile Apps</h3>
+                    <p>Designing modern subscription-based software architecture structures alongside native performance Android and iOS utility mobile apps.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+
+    <section id="portfolio" class="section-padding reveal">
+        <div class="container">
+            <h2 class="section-title">Proven <span>Deployments</span></h2>
+            
+            <div class="slider-wrapper">
+                <div class="portfolio-slider" id="portfolioSlider">
+                    <div class="slide">
+                        <div class="slide-header">01 Salon website</div>
+                        <div class="slide-body">
+                            A highly optimized, complete m-commerce ecosystem built to bridge product distribution structures with sub-second responsive performance pipelines.
+                        </div>
+                        <div class="feedback-zone">
+                            "★★★★★ - The transactional architecture and dark fluid interface completely optimized our product tracking workflow." <br><strong>— Retail System Client</strong>
+                        </div>
+                    </div>
+
+                    <div class="slide">
+                        <div class="slide-header">02 Local-Link Infrastructure</div>
+                        <div class="slide-body">
+                            Advanced multi-store inventory mapping layer designed specifically to synchronize offline inventory metrics seamlessly into cloud tracking cores.
+                        </div>
+                        <div class="feedback-zone">
+                            "★★★★★ - Extremely robust database handling and clean animations. The automation dashboard saves our tracking branch hours daily." <br><strong>— Logistics Partner</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slider-controls">
+                    <button class="slider-btn" onclick="moveSlide(-1)">‹</button>
+                    <button class="slider-btn" onclick="moveSlide(1)">›</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- UPDATED PROFESSIONAL ABOUT US SECTION -->
+    <section id="about" class="section-padding reveal">
+        <div class="container">
+            <h2 class="section-title">Corporate <span>Profile</span></h2>
+            
+            <div class="about-grid">
+                <!-- Main Intro Card -->
+                <div class="about-main-card">
+                    <h3>Architecting Digital Infrastructure For Emerging Markets</h3>
+                    <p>Veloct is a high-performance software engineering collective dedicated to deploying premium digital ecosystems. We bridge the gap between complex enterprise technologies and commercial usability, ensuring local businesses scale seamlessly into cloud-native architectures.</p>
+                </div>
+
+                <!-- Three Pillars Grid -->
+                <div class="about-pillars">
+                    <div class="pillar-card">
+                        <div class="pillar-icon"><i class="fas fa-bullseye"></i></div>
+                        <div class="pillar-info">
+                            <h4>Our Mission</h4>
+                            <p>To democratize enterprise-grade web, POS, and mobile technologies for localized small and medium-scale systems.</p>
+                        </div>
+                    </div>
+
+                    <div class="pillar-card">
+                        <div class="pillar-icon"><i class="fas fa-cogs"></i></div>
+                        <div class="pillar-info">
+                            <h4>Our Approach</h4>
+                            <p>Every deployment runs through automated testing pipelines, responsive fluid vector layouts, and robust technical schematic maps.</p>
+                        </div>
+                    </div>
+
+                    <div class="pillar-card">
+                        <div class="pillar-icon"><i class="fas fa-shield-alt"></i></div>
+                        <div class="pillar-info">
+                            <h4>Why Veloct</h4>
+                            <p>We deliver architecture focused heavily on speed operations, multi-tenant databases, and sub-second rendering metrics.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="team" class="section-padding reveal">
+        <div class="container">
+            <h2 class="section-title">Technical <span>Founders</span></h2>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="avatar-glow">
+                        <img src="images/ashani.png" alt="Ashani Upeksha" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block;">
+                    </div>
+                    <h3>Ashani Upeksha</h3>
+                    <p style="color: var(--primary-yellow); font-weight: 600; margin: 10px 0;">Software Engineer</p>
+                    <p style="color: var(--text-muted); font-size: 14px;">Specialized in crafting clean vector frameworks and interactive fluid systems.</p>
+                </div>
+
+                <div class="team-card">
+                    <div class="avatar-glow">
+                        <img src="images/aiya.png" alt="Hirusha Arunoth" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block;">
+                    </div>
+                    <h3>Hirusha Arunoth</h3>
+                    <p style="color: var(--primary-yellow); font-weight: 600; margin: 10px 0;">Technical Director</p>
+                    <p style="color: var(--text-muted); font-size: 14px;">Handles multi-tenant cloud architecture, container workflows, and distribution models.</p>
+                </div>
+
+                <div class="team-card">
+                    <div class="avatar-glow">
+                        <img src="images/imesha.png" alt="Imesha Umayangani" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block;">
+                    </div>
+                    <h3>Imesha Umayangani</h3>
+                    <p style="color: var(--primary-yellow); font-weight: 600; margin: 10px 0;">Software Engineer</p>
+                    <p style="color: var(--text-muted); font-size: 14px;">Responsible for secure relational database schema compilation and API configurations.</p>
+                </div>
+
+                
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section-padding reveal">
+        <div class="container">
+            <h2 class="section-title">Initiate <span>Development</span></h2>
+            <div class="contact-form">
+                <form id="agencyForm">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name / Enterprise Entity" required>
+                    </div>
+                    <div class="form-group">
+                        <select required>
+                            <option value="">Select Target Deployment Layer</option>
+                            <option value="web">Web Architecture & Hosting Pipeline</option>
+                            <option value="ecom">E-Commerce Application Network</option>
+                            <option value="pos">Custom Tailored POS Implementation</option>
+                            <option value="saas">SaaS Scalability Architecture</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea rows="5" placeholder="Outline your specific engineering metrics or system goals..." required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Project Specification</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <a href="https://wa.me/94741676349" class="whatsapp-float" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+    </a>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col brand-col">
+                    <div class="footer-logo">V<span>eloct</span></div>
+                    <p class="footer-desc">Empowering local small businesses with next-generation digital ecosystems and advanced mobile solutions.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#team">Our Team</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Our Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">M-Commerce Apps</a></li>
+                        <li><a href="#">UI/UX Designing</a></li>
+                        <li><a href="#">Web Platforms</a></li>
+                        <li><a href="#">Digital Marketing</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col contact-col">
+                    <h4>Get In Touch</h4>
+                    <ul class="footer-contact-info">
+                        <li><i class="fas fa-envelope"></i> info@veloct.com</li>
+                        <li><i class="fas fa-phone-alt"></i> +94 77 123 4567</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Colombo, Sri Lanka</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-flex">
+                    <p>&copy; 2026 Veloct. All Rights Reserved.</p>
+                    <div class="footer-legal">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
