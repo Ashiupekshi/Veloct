@@ -1,5 +1,7 @@
 
-/* 1. DYNAMIC CYBER PARTICLES BACKGROUND ENGINE */
+/* ==========================================================================
+   1. DYNAMIC CYBER PARTICLES BACKGROUND ENGINE
+   ========================================================================== */
 const canvas = document.getElementById('particleCanvas');
 const ctx = canvas.getContext('2d');
 
@@ -83,19 +85,24 @@ initParticles();
 animateParticles();
 
 
-/* 2. ADVANCED INTERACTIVE SLIDER MECHANISM */
+/* ==========================================================================
+   2. ADVANCED INTERACTIVE SLIDER MECHANISM
+   ========================================================================== */
 let currentSlide = 0;
-function moveSlide(direction) {
+window.moveSlide = function(direction) {
     const slider = document.getElementById('portfolioSlider');
     const totalSlides = document.querySelectorAll('.slide').length;
     currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
-    slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+    if(slider) {
+        slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
 }
 
 
-/* 3. ADVANCED SCROLL REVEAL EFFECT */
+/* ==========================================================================
+   3. ADVANCED SCROLL REVEAL EFFECT
+   ========================================================================== */
 const revealElements = document.querySelectorAll('.reveal');
-
 const scrollObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -108,14 +115,17 @@ const scrollObserver = new IntersectionObserver((entries) => {
     threshold: 0.15,
     rootMargin: "0px 0px -20px 0px"
 });
-
 revealElements.forEach(el => scrollObserver.observe(el));
 
 
-/* 4. ENHANCED PRELOADER WITH AUTOMATIC SCROLL TO TOP */
+/* ==========================================================================
+   4. ENHANCED PRELOADER WITH SCROLL LOCK
+   ========================================================================== */
+// පිටුව ලෝඩ් වීමට පෙරම Scroll Lock කිරීම (CSS එක සමඟ ක්‍රියා කරයි)
+document.body.classList.add('preloader-active');
+
 window.addEventListener('load', () => {
     const preloader = document.getElementById('id_preloader');
-    
     window.scrollTo(0, 0);
 
     setTimeout(() => {
@@ -125,38 +135,40 @@ window.addEventListener('load', () => {
             
             setTimeout(() => {
                 preloader.style.display = 'none';
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
+                // ලෝඩර් එක ඉවත් වූ පසු Scroll නිදහස් කිරීම
+                document.body.classList.remove('preloader-active');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             }, 800);
         }
     }, 2500); 
 });
 
 
-/* 5. HERO SECTION PARALLAX EFFECT */
+/* ==========================================================================
+   5. HERO SECTION PARALLAX EFFECT (FIXED)
+   ========================================================================== */
 document.addEventListener("mousemove", function(e) {
-    const heroContent = document.querySelector(".hero-content");
+    // වැරදි Class එක නිවැරදි කරන ලදී (.hero-content-left)
+    const heroContent = document.querySelector(".hero-content-left");
     if(heroContent) {
-        let x = (window.innerWidth / 2 - e.pageX) / 30;
-        let y = (window.innerHeight / 2 - e.pageY) / 30;
+        let x = (window.innerWidth / 2 - e.pageX) / 45;
+        let y = (window.innerHeight / 2 - e.pageY) / 45;
         heroContent.style.transform = `translateX(${x}px) translateY(${y}px)`;
     }
 });
 
-/* 6. AUTOMATIC NAVIGATION LINK HIGHLIGHT ON SCROLL */
+
+/* ==========================================================================
+   6. AUTOMATIC NAVIGATION LINK HIGHLIGHT ON SCROLL
+   ========================================================================== */
 const sections = document.querySelectorAll('section');
 const navLinks = document.querySelectorAll('nav ul li a');
 
 window.addEventListener('scroll', () => {
     let current = '';
-    
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        // Navigation බාර් එකේ උසට ගැලපෙන සේ (Offset 100px) සකසා ඇත
-        if (pageYOffset >= (sectionTop - 100)) {
+        if (window.pageYOffset >= (sectionTop - 120)) {
             current = section.getAttribute('id');
         }
     });
@@ -169,32 +181,50 @@ window.addEventListener('scroll', () => {
     });
 });
 
-/* 7. MOBILE HAMBURGER MENU MECHANISM */
+
+/* ==========================================================================
+   7. MOBILE HAMBURGER MENU MECHANISM (STABLE FULL-SCREEN)
+   ========================================================================== */
 const menuToggle = document.getElementById('menuToggle');
 const navMenu = document.getElementById('navMenu');
-const menuIcon = menuToggle.querySelector('i');
+const menuIcon = menuToggle ? menuToggle.querySelector('i') : null;
 const navLinksMobile = document.querySelectorAll('nav ul li a');
 
-// බටන් එක ක්ලික් කරද්දී menu එක open/close කරන්න
-menuToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-    
-    // Icon එක වෙනස් කරන්න (Bars සලකුණ සහ Close සලකුණ මාරුවෙන් මාරුවට)
-    if (navMenu.classList.contains('active')) {
-        menuIcon.classList.remove('fa-bars');
-        menuIcon.classList.add('fa-times');
-    } else {
-        menuIcon.classList.remove('fa-times');
-        menuIcon.classList.add('fa-bars');
-    }
-});
-
-// Menu එක ඇතුළේ ලින්ක් එකක් ක්ලික් කරපු ගමන් menu එක වහන්න
-navLinksMobile.forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        menuIcon.classList.remove('fa-times');
-        menuIcon.classList.add('fa-bars');
+if (menuToggle && navMenu && menuIcon) {
+    menuToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        
+        // Menu එක open/close කිරීම
+        navMenu.classList.toggle('active');
+        
+        if (navMenu.classList.contains('active')) {
+            // Hamburger Icon එක X සලකුණක් බවට පත් කිරීම
+            menuIcon.classList.remove('fa-bars');
+            menuIcon.classList.add('fa-times');
+            
+            // මෙනු එක ඇතුළත ඇති විට මුළු පිටුවම scroll වීම වැළැක්වීම
+            document.body.style.overflow = 'hidden'; 
+            
+            // ලින්ක් එකින් එක පාවී එන ඇනිමේෂන් එක (Staggered Delay)
+            const listItems = navMenu.querySelectorAll('ul li');
+            listItems.forEach((item, index) => {
+                item.style.transitionDelay = `${(index * 0.05) + 0.1}s`;
+            });
+        } else {
+            // නැවත Hamburger සලකුණ පෙන්වීම
+            menuIcon.classList.remove('fa-times');
+            menuIcon.classList.add('fa-bars');
+            document.body.style.overflow = '';
+        }
     });
 
-});
+    // මෙනු එකේ ලින්ක් එකක් ක්ලික් කළ සැනින් මෙනු එක වසා දැමීම
+    navLinksMobile.forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            menuIcon.classList.remove('fa-times');
+            menuIcon.classList.add('fa-bars');
+            document.body.style.overflow = '';
+        });
+    });
+}

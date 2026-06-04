@@ -23,7 +23,13 @@ body {
     background-color: var(--bg-dark);
     color: var(--text-white);
     overflow-x: hidden;
+    width: 100%;
+    position: relative;
+    margin: 0;
+    padding: 0;
 }
+
+
 
 .container {
     max-width: 1200px;
@@ -38,13 +44,16 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     background-color: #050508;
-    z-index: 9999;
+    z-index: 9999999;
     display: flex;
     justify-content: center;
     align-items: center;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
 }
 
 .loader-text {
@@ -712,8 +721,10 @@ footer {
 .whatsapp-float img { width: 35px; height: 35px; }
 
 /* ==========================================================================
-   13. RESPONSIVE MEDIA QUERIES (CLEANED & OPTIMIZED WITH SLIDING NAVIGATION)
+   13. RESPONSIVE MEDIA QUERIES (FULLY FIXED & REPAIRED SYSTEM)
    ========================================================================== */
+
+/* --- TABLET SCREENS (992px) --- */
 @media (max-width: 992px) {
     .hero-grid {
         grid-template-columns: 1fr;
@@ -745,73 +756,133 @@ footer {
     }
 }
 
+/* --- MOBILE SCREENS (768px) -> FULL-SCREEN NAVIGATION FIX --- */
 @media (max-width: 768px) {
-    /* Mobile Hamburger Menu Trigger Mechanism */
+    
+    /* 1. Header Layout එක හරියාකාරව පෙළගැස්වීම */
+    .nav-container {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        width: 100% !important;
+    }
+
+    /* 2. Mobile Menu Toggle (Hamburger) Button එක සකස් කිරීම */
     .mobile-menu-toggle {
-        display: block; /* Mobile වලදී Hamburger Button පෙන්වන්න */
+        display: block !important;
+        position: relative !important;
+        z-index: 100002 !important; /* මෙනු එකට වඩා සැමවිටම උඩින් තැබීමට */
+        background: none !important;
+        border: none !important;
+        color: var(--primary-yellow) !important;
+        font-size: 24px !important;
+        cursor: pointer !important;
     }
 
+    /* 3. මුළු පිටුවම වැසෙන සේ Full-Screen Navigation එක සකස් කිරීම */
     nav {
-        position: fixed;
-        top: 0;
-        right: -100%; /* ආරම්භයේදී Sidebar එක දකුණුපසින් පිටත සඟවන්න */
-        width: 270px;
-        height: 100vh;
-        background: rgba(5, 5, 8, 0.98);
-        backdrop-filter: blur(25px);
-        -webkit-backdrop-filter: blur(25px);
-        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.6);
-        transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        padding-top: 110px;
-        z-index: 1001;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        background: rgba(5, 5, 8, 0.98) !important; /* තද කළු පසුබිම */
+        backdrop-filter: blur(25px) !important;
+        -webkit-backdrop-filter: blur(25px) !important;
+        box-shadow: none !important;
+        z-index: 100001 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        
+        /* Smooth Fade & Slide Motion Effect */
+        opacity: 0 !important;
+        visibility: hidden !important;
+        transform: translateY(-20px) !important;
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
     }
 
-    /* JavaScript මඟින් 'active' class එක එකතු වූ විට sliding වී ඇතුළට එයි */
+    /* JavaScript මඟින් '.active' class එක ලැබුණු පසු පෙනෙන ආකාරය */
     nav.active {
-        right: 0;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: translateY(0) !important;
     }
 
+    /* 4. මෙනු Items සිරස්ව සහ ලස්සනට මැදට පෙළගැස්වීම */
     nav ul {
-        display: flex !important; /* display: none; ඉවත් කර flex layout එකක් සකසයි */
-        flex-direction: column;
-        align-items: center;
-        gap: 35px;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 30px !important;
+        width: 100% !important;
+        padding: 0 !important;
+        list-style: none !important;
     }
 
     nav ul li {
         margin-left: 0 !important;
+        margin-right: 0 !important;
+        text-align: center !important;
+        width: auto !important;
+        opacity: 0;
+        transform: translateY(15px);
+        transition: all 0.4s ease;
+    }
+
+    /* මෙනු එක ඇරුණු විට Items එකින් එක පාවී ඒමට */
+    nav.active ul li {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
     }
 
     nav ul li a {
-        font-size: 18px;
-        display: block;
-        width: 100%;
-        text-align: center;
+        font-size: 24px !important; /* Mobile වලට ගැලපෙන සේ විශාල කරන ලදී */
+        font-weight: 600 !important;
+        letter-spacing: 2px !important;
+        color: #FFFFFF !important;
+        text-decoration: none !important;
+        display: inline-block !important;
+        padding: 10px 20px !important;
+        width: auto !important;
+        transition: color 0.3s ease !important;
+    }
+    
+    nav ul li a:hover, 
+    nav ul li a.active {
+        color: var(--primary-yellow) !important;
+        text-shadow: 0 0 10px var(--yellow-glow) !important;
     }
 
+    /* අනෙකුත් Sections වල Mobile Layouts */
     .services-grid, .team-grid {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: column !important;
+        align-items: center !important;
     }
-    .service-card, .team-card { width: 100%; max-width: 350px; }
-    .section-padding { padding: 60px 0; }
-    .slide { padding: 20px; }
-    .whatsapp-float { bottom: 20px; right: 20px; width: 50px; height: 50px; }
-    .whatsapp-float img { width: 28px; height: 28px; }
+    .service-card, .team-card { 
+        width: 100% !important; 
+        max-width: 350px !important; 
+    }
+    .section-padding { padding: 60px 0 !important; }
+    .slide { padding: 20px !important; }
+    .whatsapp-float { bottom: 20px !important; right: 20px !important; width: 50px !important; height: 50px !important; }
+    .whatsapp-float img { width: 28px !important; height: 28px !important; }
 }
 
+/* --- SMALL MOBILE SCREENS (576px) --- */
 @media (max-width: 576px) {
-    footer { padding-top: 60px; }
+    footer { padding-top: 60px !important; }
     .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 35px;
+        grid-template-columns: 1fr !important;
+        gap: 35px !important;
     }
     .footer-bottom-flex {
-        flex-direction: column;
-        text-align: center;
-        gap: 15px;
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 15px !important;
     }
-    .footer-legal a { margin: 0 10px; }
+    .footer-legal a { margin: 0 10px !important; }
 }
 
 /* ==========================================================================
