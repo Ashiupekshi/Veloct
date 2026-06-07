@@ -1347,3 +1347,48 @@ footer {
         gap: 25px;
     }
 }
+
+
+/* Team Card Element Styling */
+.team-email {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-muted);
+    font-size: 13px;
+    text-decoration: none;
+    margin-top: 5px;
+    transition: color 0.3s ease;
+}
+
+.team-email i {
+    color: var(--primary-yellow);
+    font-size: 12px;
+}
+
+.team-email:hover {
+    color: var(--primary-yellow);
+}
+
+/* Icons Line Wrapper */
+.team-socials {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 15px;
+}
+
+.team-socials a {
+    color: var(--text-muted);
+    font-size: 16px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+/* Individual Icon Hover Glows */
+.team-socials a:hover {
+    color: var(--primary-yellow);
+    transform: translateY(-3px);
+}
