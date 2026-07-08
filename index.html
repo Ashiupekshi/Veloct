@@ -5,19 +5,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Veloct | Next-Gen Software Engineering Agency</title>
-    <link rel="stylesheet" href="style.css?v=1.1">
+    <meta name="description" content="Veloct is a premium software engineering agency specializing in web architecture, enterprise POS systems, SaaS platforms, and mobile applications. Built to scale.">
+    <link rel="stylesheet" href="style.css?v=2.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <!-- Scroll Progress Bar -->
+    <div id="scrollProgress"></div>
 
     <div id="id_preloader">
-        <div class="loader-text">
-            <span style="--i:1;">V</span>
-            <span style="--i:2;">e</span>
-            <span style="--i:3;">l</span>
-            <span style="--i:4;">o</span>
-            <span style="--i:5;">c</span>
-            <span style="--i:6;">t</span>
+        <div class="preloader-terminal">
+            <div class="terminal-header">
+                <span class="terminal-dot red"></span>
+                <span class="terminal-dot yellow"></span>
+                <span class="terminal-dot green"></span>
+                <span class="terminal-title">SYSTEM BOOT CHECK // VELOCT_OS v3.5</span>
+            </div>
+            <div class="terminal-body" id="preloaderLog">
+                <div class="log-line">> CORE: INITIALIZING VELOCT ENGINE...</div>
+            </div>
+            <div class="terminal-progress-container">
+                <div class="terminal-progress-bar" id="preloaderBar"></div>
+            </div>
+            <div class="preloader-percentage"><span id="preloaderPercentage">0</span>% SYSTEM ONLINE</div>
         </div>
     </div>
 
@@ -27,9 +37,14 @@
         <div class="container nav-container">
             <div class="logo">V<span>eloct</span></div>
 
-            <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle Navigation">
-                <i class="fas fa-bars"></i>
-            </button>
+            <div class="nav-controls">
+                <button id="audioToggleBtn" class="audio-btn" aria-label="Toggle Console Audio" title="Toggle Console Audio">
+                    <i class="fas fa-volume-mute"></i>
+                </button>
+                <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle Navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
             <nav id="navMenu">
                 <ul>
                     <li><a href="#home">Home</a></li>
@@ -53,42 +68,64 @@
             <!-- Left Column: Text Content -->
             <div class="hero-content-left">
                 <h1>Architecting Modern<br><span>Digital Ecosystems</span></h1>
-                <p>We engineering premium responsive web setups, secure business POS platforms, and cloud-native SaaS applications. Built to scale.</p>
+                <p>We engineer premium responsive web setups, secure business POS platforms, and cloud-native SaaS applications. Built to scale.</p>
                 <div class="cta-group">
                     <a href="#contact" class="btn btn-yellow">Initiate Deployment</a>
                 </div>
+                
+                <!-- Live Telemetry Cockpit Panel -->
+                <div class="hero-telemetry">
+                    <div class="telemetry-item">
+                        <span class="status-indicator-pulse"></span>
+                        <div class="telemetry-inner">
+                            <span class="telemetry-label">SYS PING</span>
+                            <span class="telemetry-value" id="pingVal">14ms</span>
+                        </div>
+                    </div>
+                    <div class="telemetry-item">
+                        <div class="telemetry-inner">
+                            <span class="telemetry-label">CORE LOAD</span>
+                            <span class="telemetry-value" id="cpuVal">24.5%</span>
+                        </div>
+                    </div>
+                    <div class="telemetry-item">
+                        <div class="telemetry-inner">
+                            <span class="telemetry-label">UPLOADS</span>
+                            <span class="telemetry-value green-text">SECURE</span>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-           
- <!-- Right Column: Future-Tech Asymmetric Core -->
+            <!-- Right Column: Future-Tech Asymmetric Core -->
             <div class="hero-visual-right">
                 <div class="tech-orb-workspace">
                     
-                    <!-- Background Cyber Grid Nodes (සජීවී පසුබිම් රින්ග් එක) -->
+                    <!-- Background Cyber Grid Nodes -->
                     <div class="cyber-pulse-ring"></div>
                     
-                    <!-- Left Node -->
-                    <div class="cyber-node node-left">
+                    <!-- Left Node (Ashani) -->
+                    <div class="cyber-node node-left" data-member="ashani" title="Click to view telemetry">
                         <div class="node-hex-wrapper">
-                            <img src="images/ashani.png" alt="Developer">
+                            <img src="images/ashani.png" alt="Ashani Upeksha">
                         </div>
-                        <span class="node-badge">DEV</span>
+                        <span class="node-badge">DEV_01</span>
                     </div>
                     
-                    <!-- Center Master Node (ප්‍රධාන ලීඩ් එක උඩින් සහ ලොකුවට) -->
-                    <div class="cyber-node node-center">
+                    <!-- Center Master Node (Hirusha Lead) -->
+                    <div class="cyber-node node-center" data-member="hirusha" title="Click to view telemetry">
                         <div class="node-hex-wrapper core-glow">
-                            <img src="images/aiya.png" alt="Lead Engineer">
+                            <img src="images/aiya.png" alt="Hirusha Arunoth">
                         </div>
-                        
+                        <span class="node-badge core-badge">LEAD</span>
                     </div>
                     
-                    <!-- Right Node -->
-                    <div class="cyber-node node-right">
+                    <!-- Right Node (Imesha) -->
+                    <div class="cyber-node node-right" data-member="imesha" title="Click to view telemetry">
                         <div class="node-hex-wrapper">
-                            <img src="images/imesha.png" alt="Fullstack">
+                            <img src="images/imesha.png" alt="Imesha Umayangani">
                         </div>
-                        <span class="node-badge">DEV</span>
+                        <span class="node-badge">DEV_02</span>
                     </div>
 
                 </div>
@@ -97,6 +134,52 @@
                 <div class="core-tech-label">
                     <span class="status-dot"></span> VELOCT ENGINE CORE // LIVE_
                 </div>
+                
+                <!-- Advanced Glass Bio Drawer -->
+                <div class="bio-overlay-drawer" id="bioDrawer">
+                    <button class="close-drawer-btn" id="closeDrawer">&times;</button>
+                    <div class="drawer-header">
+                        <div class="drawer-avatar">
+                            <div class="drawer-avatar-hex">
+                                <img id="drawerImg" src="images/ashani.png" alt="">
+                            </div>
+                        </div>
+                        <div class="drawer-title-group">
+                            <h3 id="drawerName">Developer</h3>
+                            <span id="drawerRole" class="role-badge">Engineer</span>
+                        </div>
+                    </div>
+                    <div class="drawer-body">
+                        <p id="drawerBio">Bio details...</p>
+                        <div class="skill-meter-group">
+                            <div class="skill-meter">
+                                <div class="skill-header">
+                                    <span>Frontend Layouts</span>
+                                    <span id="valFE">0%</span>
+                                </div>
+                                <div class="meter-bar"><div class="meter-fill" id="fillFE"></div></div>
+                            </div>
+                            <div class="skill-meter">
+                                <div class="skill-header">
+                                    <span>Backend Engines</span>
+                                    <span id="valBE">0%</span>
+                                </div>
+                                <div class="meter-bar"><div class="meter-fill" id="fillBE"></div></div>
+                            </div>
+                            <div class="skill-meter">
+                                <div class="skill-header">
+                                    <span>Database Architecture</span>
+                                    <span id="valDB">0%</span>
+                                </div>
+                                <div class="meter-bar"><div class="meter-fill" id="fillDB"></div></div>
+                            </div>
+                        </div>
+                        <div class="drawer-socials" id="drawerSocials">
+                            <!-- Populated dynamically -->
+                        </div>
+                    </div>
+                </div>
+
             </div>
             
 
@@ -137,17 +220,45 @@
                 <div class="process-card">
                     <div class="step-num">01</div>
                     <h3>Requirement</h3>
-                    <p>ඔබේ ව්‍යාපාරික අවශ්‍යතාවය සහ මෘදුකාංග සැලසුම සාකච්ඡා කිරීම.</p>
+                    <p>We discuss your business requirements, system goals, and finalize the software architecture roadmap tailored to your needs.</p>
                 </div>
                 <div class="process-card highlight">
                     <div class="step-num">02</div>
                     <h3>Development</h3>
-                    <p>ප්‍රමිතියෙන් යුත් කෝඩ් (Clean Code) භාවිතයෙන් නිර්මාණය කිරීම.</p>
+                    <p>Clean, modular code written to industry standards — fully tested, documented, and version-controlled throughout the build cycle.</p>
                 </div>
                 <div class="process-card">
                     <div class="step-num">03</div>
                     <h3>Delivery</h3>
-                    <p>පරීක්ෂා කිරීමෙන් පසු සාර්ථකව නිමවා භාර දීම.</p>
+                    <p>After rigorous QA testing, we deploy, hand over, and provide ongoing support to ensure maximum system performance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIVE STATS SECTION -->
+    <section class="stats-section reveal">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number" data-target="50">0</div>
+                    <div class="stat-suffix">+</div>
+                    <div class="stat-label">Projects Deployed</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="99">0</div>
+                    <div class="stat-suffix">%</div>
+                    <div class="stat-label">Uptime SLA</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="3">0</div>
+                    <div class="stat-suffix">+</div>
+                    <div class="stat-label">Years Operating</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="12">0</div>
+                    <div class="stat-suffix">ms</div>
+                    <div class="stat-label">Avg Response Time</div>
                 </div>
             </div>
         </div>
@@ -156,11 +267,24 @@
     <section id="tech" class="section-padding reveal alternate-bg">
         <div class="container">
             <h2 class="section-title">Tech <span>Stack</span></h2>
+            
+            <div class="tech-filters">
+                <button class="tech-filter-btn active" data-filter="all">All Stack</button>
+                <button class="tech-filter-btn" data-filter="frontend">Frontend</button>
+                <button class="tech-filter-btn" data-filter="backend">Backend</button>
+                <button class="tech-filter-btn" data-filter="mobile">Mobile SDK</button>
+                <button class="tech-filter-btn" data-filter="database">Databases</button>
+            </div>
+
             <div class="tech-container">
-                <div class="tech-box"><i class="fab fa-java"></i> <span>Java</span></div>
-                <div class="tech-box"><i class="fab fa-android"></i> <span>Android SDK</span></div>
-                <div class="tech-box"><i class="fab fa-js"></i> <span>JavaScript</span></div>
-                <div class="tech-box"><i class="fas fa-database"></i> <span>SQLite / Firebase</span></div>
+                <div class="tech-box" data-tech-cat="backend"><i class="fab fa-java"></i> <span>Java</span></div>
+                <div class="tech-box" data-tech-cat="mobile"><i class="fab fa-android"></i> <span>Android SDK</span></div>
+                <div class="tech-box" data-tech-cat="frontend"><i class="fab fa-js"></i> <span>JavaScript</span></div>
+                <div class="tech-box" data-tech-cat="frontend"><i class="fab fa-react"></i> <span>React JS</span></div>
+                <div class="tech-box" data-tech-cat="frontend"><i class="fab fa-html5"></i> <span>HTML5 / CSS3</span></div>
+                <div class="tech-box" data-tech-cat="backend"><i class="fab fa-node-js"></i> <span>Node JS</span></div>
+                <div class="tech-box" data-tech-cat="database"><i class="fas fa-database"></i> <span>Firebase</span></div>
+                <div class="tech-box" data-tech-cat="database"><i class="fas fa-server"></i> <span>SQLite / SQL</span></div>
             </div>
         </div>
     </section>
@@ -297,16 +421,16 @@
                     </div>
                 </div>
 
-                <!-- 2. Hirusha Arunoth -->
-                <div class="team-card">
+             <!-- 2. Hirusha Arunoth --> 
+                 <div class="team-card">
                     <div class="avatar-glow">
                         <img src="images/aiya.png" alt="Hirusha Arunoth" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block;">
-                    </div>
+                    </div> 
                     <h3>Hirusha Arunoth</h3>
                     <!-- 🛠️ UPDATED ROLE -->
                     <p style="color: var(--primary-yellow); font-weight: 600; margin: 10px 0;">Head of Marketing</p>
                     <!-- 🛠️ UPDATED DESCRIPTION -->
-                    <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 15px;">Drives business growth, strategic client operations, and digital campaign initiatives to scale the Veloct ecosystem locally and globally.</p>
+                     <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 15px;">Drives business growth, strategic client operations, and digital campaign initiatives to scale the Veloct ecosystem locally and globally.</p>
                     
                     <a href="mailto:hirusha.veloct@gmail.com" class="team-email"><i class="fas fa-envelope"></i> hirusha.veloct@gmail.com</a>
                     
@@ -347,22 +471,40 @@
             <div class="contact-form">
                 <form id="agencyForm">
                     <div class="form-group">
-                        <input type="text" placeholder="Your Name / Enterprise Entity" required>
+                        <input type="text" id="clientName" placeholder="Your Name / Enterprise Entity" required>
                     </div>
                     <div class="form-group">
-                        <select required>
+                        <select id="deploymentLayer" required>
                             <option value="">Select Target Deployment Layer</option>
-                            <option value="web">Web Architecture & Hosting Pipeline</option>
+                            <option value="web">Web Architecture &amp; Hosting Pipeline</option>
                             <option value="ecom">E-Commerce Application Network</option>
                             <option value="pos">Custom Tailored POS Implementation</option>
                             <option value="saas">SaaS Scalability Architecture</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <textarea rows="5" placeholder="Outline your specific engineering metrics or system goals..." required></textarea>
+                        <textarea id="projectDetails" rows="5" placeholder="Outline your specific engineering metrics or system goals..." required></textarea>
                     </div>
-                    <button type="submit" class="submit-btn">Send Project Specification</button>
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        <i class="fas fa-paper-plane"></i> Send Project Specification
+                    </button>
                 </form>
+
+                <!-- Terminal Submission Overlay -->
+                <div class="form-terminal-overlay" id="formTerminal">
+                    <div class="ft-header">
+                        <span class="terminal-dot red"></span>
+                        <span class="terminal-dot yellow"></span>
+                        <span class="terminal-dot green"></span>
+                        <span class="terminal-title">VELOCT_TRANSMITTER // SECURE_CHANNEL</span>
+                    </div>
+                    <div class="ft-body" id="ftBody"></div>
+                    <div class="ft-success" id="ftSuccess">
+                        <div class="ft-success-icon"><i class="fas fa-check-circle"></i></div>
+                        <p>Transmission delivered. Our team will contact you within 24 hours.</p>
+                        <button class="ft-close-btn" id="ftCloseBtn">Close Terminal</button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
