@@ -426,7 +426,7 @@ const memberData = {
     ashani: {
         name: "Ashani Upeksha",
         role: "Full-Stack Developer",
-        img: "images/ashani.png",
+        img: "images/ashani_cyber.jpg",
         bio: "Specialized in building end-to-end web architectures, high-performance interactive interfaces, and robust system integration.",
         fe: "95%",
         be: "88%",
@@ -440,7 +440,7 @@ const memberData = {
     hirusha: {
         name: "Hirusha Arunoth",
         role: "Head of Marketing",
-        img: "images/aiya.png",
+        img: "images/aiya_cyber.jpg",
         bio: "Drives business growth, strategic client operations, and digital campaign initiatives to scale the Veloct ecosystem locally and globally.",
         fe: "75%",
         be: "60%",

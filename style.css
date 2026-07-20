@@ -1307,11 +1307,29 @@ footer {
     box-shadow: 0 0 10px rgba(255,215,0,0.3) !important;
 }
 
+/* වම්පස Node එක (cyan පැහැයෙන් දිදුලයි) */
+.cyan-glow {
+    background: linear-gradient(135deg, #00f0ff, #0088ff) !important;
+}
+.cyan-glow img {
+    filter: grayscale(0%) brightness(1) !important;
+}
+.dev-badge {
+    border-color: #00f0ff !important;
+    color: #00f0ff !important;
+    box-shadow: 0 0 10px rgba(0,240,255,0.3) !important;
+}
+
+.cyber-node:hover .node-hex-wrapper img {
+    filter: grayscale(0%) brightness(1.1) !important;
+}
+
 /* --------------------------------------------------------------------------
    INTERACTIVE 3D HOVER (මවුස් එක ළඟට ගිය විට සිදුවන වෙනස්කම්)
    -------------------------------------------------------------------------- */
 .tech-orb-workspace:hover .node-left {
     transform: translate(-170px, 60px) scale(0.85) rotateY(15deg) !important;
+    filter: drop-shadow(0 20px 40px rgba(0, 240, 255, 0.25)) !important;
 }
 
 .tech-orb-workspace:hover .node-right {
